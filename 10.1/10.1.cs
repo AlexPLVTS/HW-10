@@ -29,6 +29,7 @@ for (int i = 0;i < input.Length;i++)
 {
     if (input[i] == ' ')
     {
+        spaceIndex = i;
         isLastName = true;
         continue;
     }
@@ -41,7 +42,10 @@ for (int i = 0;i < input.Length;i++)
         lastName += input[i];
     }
 }
-if (firstName[0] == lastName[0])
+char firstNameInitial = input[0];
+char lastNameInitial = input[spaceIndex + 1];
+
+if (firstNameInitial == lastNameInitial)
 {
     Console.WriteLine($"Name {firstName} and lastname {lastName} starts with same letter!");
 }
